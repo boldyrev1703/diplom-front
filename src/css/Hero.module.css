@@ -1,0 +1,10 @@
+.wrap {
+    background: url('../../public/hero_bg.jpg') no-repeat;
+    background-size: cover;
+    height: 850px;
+}
+
+.wrap_heder {
+    max-width: 1200px;
+    margin: 0 auto;
+}
