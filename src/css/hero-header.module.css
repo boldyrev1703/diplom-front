@@ -13,3 +13,10 @@
 .title {
     padding-top: 8px;
 }
+
+@media (max-width: 480px) { 
+    .wrap {
+        font-size: 14px;
+        flex-direction: column;
+    }
+}
