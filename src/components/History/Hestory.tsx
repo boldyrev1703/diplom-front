@@ -29,7 +29,7 @@ const History = () => {
             content: 'Совершенствование компетенций педагогических работников в рамках реализации федерального проекта «Учитель будущего»',
             subContent: 'ФГАОУ ДПО «Академия реализации государственной политики и профессионального развития работников образования Министерства просвещения Российской Федерации», г. Москва'
         },
-    ];
+    ].sort((a,b) => a.year - b.year);
 
   
     const leftSide = historyData.filter((_,i) => i % 2 === 1);
@@ -144,6 +144,49 @@ const History = () => {
                                 key={i} 
                                 style={{
                                     marginTop:rightSideMargin[i]+'px',
+                                    display: 'flex',
+                                    flexDirection: 'row-reverse'
+                                }}
+                            >
+                                <div>
+
+                                <span
+                                    className={theme.history__title}
+                                >
+                                    {el.title}
+                                </span>
+
+                                <span 
+                                    className={theme.history__content}
+                                >
+                                    {el.content}
+                                </span>
+
+                                <span 
+                                    className={theme.history__subContent}
+                                >
+                                    {el.subContent}
+                                </span>
+                                </div>
+                                
+                                <span
+                                    className={theme.history__year_r}
+                                >
+                                    {el.year}
+                                </span>
+                            </div>
+                        )}
+                    </div>
+
+                    <div className={theme.side_m}>
+                        {rightSide
+                            .concat(leftSide)
+                            .sort((a, b) => a.year - b.year)
+                            .map((el,i) =>
+                            <div
+                                key={i} 
+                                style={{
+                                    marginTop:rightSideMargin[i] / 2 +'px',
                                     display: 'flex',
                                     flexDirection: 'row-reverse'
                                 }}
