@@ -186,7 +186,7 @@ const History = () => {
                             <div
                                 key={i} 
                                 style={{
-                                    marginTop:rightSideMargin[i] / 2 +'px',
+                                    marginTop:rightSideMargin[i]+'px',
                                     display: 'flex',
                                     flexDirection: 'row-reverse'
                                 }}
