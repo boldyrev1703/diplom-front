@@ -108,6 +108,11 @@
         margin-left: 16px;
         font-size: 24px;
         line-height: 120%;
+        max-width: 200px;
+    }
+
+    .chronology {
+        margin-top: 20px;
     }
 
     .side {
