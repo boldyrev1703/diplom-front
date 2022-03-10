@@ -1,35 +1,20 @@
-import React, { useEffect, useRef } from 'react';
 import theme from '../../css/History.module.css';
 
-type HistoryData = {
-    year: number,
+export type HistoryData = {
+    yearDate: number | string,
     content: string,
     subContent?: string,
     title?: string,
 }
 
-const History = () => {
-    const historyData: Array<HistoryData> = [
-        {
-            year: 1991,
-            content: 'Окончила педагогичесское училище в Ростове-на-Дону по специальности учитель начальных классов',
-        },
-        {
-            year: 2013,
-            content: 'Окончила Южный Федеральный университет г. Ростова на Дону по специальности учитель русского языка и литературы',
-        },
-        {
-            year: 2019,
-            content: '“Инновационные технологии дополнительного образования в рамках реализации ФГОС” “Современные технологии медиации”',
-            title: 'Повышение квалификации',
-            subContent: 'ООО «Международный центр консалтинга и образования «Велес», г. Таганрог'
-        },
-        {
-            year: 2020,
-            content: 'Совершенствование компетенций педагогических работников в рамках реализации федерального проекта «Учитель будущего»',
-            subContent: 'ФГАОУ ДПО «Академия реализации государственной политики и профессионального развития работников образования Министерства просвещения Российской Федерации», г. Москва'
-        },
-    ].sort((a,b) => a.year - b.year);
+export type HistoryProps = {
+    historyData: Array<HistoryData>
+}
+
+const History = (props: HistoryProps) => {
+    const {historyData} = {...props}; 
+   
+    historyData.sort((a,b) => Number(a.yearDate) - Number(b.yearDate));
 
   
     const leftSide = historyData.filter((_,i) => i % 2 === 1);
@@ -116,7 +101,7 @@ const History = () => {
                                 <span
                                     className={theme.history__year_l}
                                 >
-                                    {el.year}
+                                    {el.yearDate}
                                 </span>
                             </div>
                         )}
@@ -172,7 +157,7 @@ const History = () => {
                                 <span
                                     className={theme.history__year_r}
                                 >
-                                    {el.year}
+                                    {el.yearDate}
                                 </span>
                             </div>
                         )}
@@ -181,7 +166,7 @@ const History = () => {
                     <div className={theme.side_m}>
                         {rightSide
                             .concat(leftSide)
-                            .sort((a, b) => a.year - b.year)
+                            .sort((a, b) => Number(a.yearDate) - Number(b.yearDate))
                             .map((el,i) =>
                             <div
                                 key={i} 
@@ -214,7 +199,7 @@ const History = () => {
                                 <span
                                     className={theme.history__year_r}
                                 >
-                                    {el.year}
+                                    {el.yearDate}
                                 </span>
                             </div>
                         )}

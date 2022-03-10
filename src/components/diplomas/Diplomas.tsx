@@ -8,9 +8,14 @@ import  photo2 from './diploms/2.jpg';
 import  photo3 from './diploms/3.jpg';
 import  photo4 from './diploms/4.jpg';
 
-const  Diplomas = () => {
-    const screenWidth = window.screen.width;
+type DiplomasProps = {
+    mail: string, 
+    phone: string
+};
 
+const  Diplomas = (props: DiplomasProps) => {
+    const screenWidth = window.screen.width;
+    const {phone, mail} = {...props}
     return (
         <div className={theme.wrap}>
             <span className={theme.title}>Грамоты и Награды</span>
@@ -37,8 +42,8 @@ const  Diplomas = () => {
             <div className={theme.questions}>
                 <span className={theme.questions__bg}>по всем вопросам</span>
                 <div className={theme.questions__contentWrap}>
-                    <span className={theme.questions__content}>tat86222482@yandex.ru</span>
-                    <span className={theme.questions__content}>8 (863) 586-73-08</span>
+                    <span className={theme.questions__content}>{mail}</span>
+                    <span className={theme.questions__content}>{phone}</span>
                 </div>
             </div>
         </div>
