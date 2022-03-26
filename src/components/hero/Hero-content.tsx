@@ -6,7 +6,6 @@ type HeroContentProps = {
 }
 
 const HeroContent = (props: HeroContentProps) => {
-  
     return (
         <div className={theme.wrap}>
             <h1 className={theme.title}>{props.content}</h1>

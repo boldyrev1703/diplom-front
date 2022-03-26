@@ -66,7 +66,7 @@ function App() {
         }} 
         heroContent={{
           content: heroState.length > 0 ?  heroState[0].content : defaultHero.heroContent.content,
-          subContent: heroState.length > 0 ?  heroState[0].content : defaultHero.heroContent.content,
+          subContent: heroState.length > 0 ?  heroState[0].subContent : defaultHero.heroContent.content,
         }}
       />
       <History historyData={hestoryState.length > 0 ? hestoryState : defaultHistory} />
