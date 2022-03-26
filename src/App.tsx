@@ -1,4 +1,3 @@
-import { log } from 'console';
 import { useState, useEffect } from 'react';
 import Diplomas from './components/diplomas/Diplomas';
 import Footer from './components/footer/Footer';
